@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # ---- Cambie solo estas dos líneas (respete mayúsculas y minúsculas) ----
-GH_USER="su-usuario-github"
+GH_USER="ginnko2019"
 GH_REPO="gitops-lab"
 # -------------------------------------------------------------------------
 
