@@ -2,4 +2,10 @@ framework:
   - terraform
 compact: true
 quiet: true
-skip-check: []
+skip-check:
+  - CKV_AZURE_59          # El sitio web estático necesita acceso público para poder ser consultado desde Internet.
+  - CKV2_AZURE_33         # No se configura un endpoint privado porque este laboratorio publica un sitio web estático accesible públicamente.
+  - CKV2_AZURE_1          # No se usa una clave administrada por el cliente porque el laboratorio no almacena información sensible y se busca mantener una arquitectura simple.
+  - CKV_AZURE_206         # Se mantiene replicación LRS porque es suficiente para un entorno académico y permite reducir el costo de los recursos.
+  - CKV_AZURE_33          # No se habilita logging del servicio de colas porque la solución no utiliza Azure Queue Storage.
+  - CKV2_AZURE_40         # Se mantiene Shared Key porque Terraform la requiere en este laboratorio para cargar index.html en el contenedor web.
